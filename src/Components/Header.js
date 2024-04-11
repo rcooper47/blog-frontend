@@ -3,9 +3,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import React, { useState, useEffect, useRef } from 'react';
-import listenForOutsideClick from "../listen-for-outside-clicks";
-import DarkMode from './DarkMode';
 import Brightness6Icon from '@mui/icons-material/Brightness6';
+import { Link } from 'react-router-dom';
 
 
 
@@ -36,7 +35,7 @@ export default function Header() {
             <header className='header mt-1 lg:mx-24'>
   <div className='header wrapper flex items-center justify-between px-2 sm:flex sm:justify-between'>
   <div className="hidden md:flex " >
-    <a href='#' className='flex hover:bg-gray-500 py-1 ml-4 lg:mx-24 lg:mr-16 font-poppins'>Dummy</a>
+    <a href='#' className='flex hover:bg-gray-500 py-1 ml-4 lg:mx-24 lg:mr-16 font-poppins'>Best</a>
     <a href='#' className='block hover:bg-gray-500 py-1  ml-4 lg:ml-16 font-poppins '>Social</a>
     </div>
     <div className='left elements'>
@@ -55,14 +54,16 @@ export default function Header() {
           <CloseIcon style={{ fontSize: '1.5rem' }} onClick={toggleIsOpen} className={`block hover:text-gray-500 dark:focus:text-white `}/>
 
     </div>
-    <div className='center content block lg:ml-40 lg:px-62 md:px-10 lg:mr-0 lg:pr-0 lg:pl-14 mx-4 px-2  text-blue-1 font-futura text-4xl font-bold'>The Lazy Chefs</div>
+    <div className='center content block lg:ml-40 lg:px-62 md:px-10 lg:mr-0 lg:pr-0 lg:pl-14 mx-4 px-2  text-blue-1 font-futura text-4xl font-bold'>
+      <Link to='/'>The Lazy Chefs</Link></div>
     <div className="hidden md:flex " >
     <a href='#' className='block hover:bg-gray-500  ml-4 lg:ml-0 font-poppins lg:mr-10'>Recipes</a>
     <a href='#' className='block  hover:bg-gray-500  mx-4 lg:ml-16 font-poppins lg:mr-0'>Social</a>
     </div>
     <div className='right elements'>
         <div  className={`right elements lg:mr-4 ${isOpen ? "hidden" : "block"}`}>
-      <SearchIcon  className='right elements lg:mr-0'/>
+          <Link to='/search'> <SearchIcon  className='right elements lg:mr-0'/></Link>
+     
       <button onClick={toggleDarkMode}>
       <Brightness6Icon className=' block right elements lg:mr-4 dark:text-white' />
       </button></div>

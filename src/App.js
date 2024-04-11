@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Header from './Components/Header';
 import HomeFeed from './Components/HomeFeed';
+import {Outlet } from "react-router-dom";
 function App() {
 
   // useEffect(() => {
@@ -21,9 +22,9 @@ function App() {
 
   
   return (
-    <div className="App dark:bg-black bg-white">
+    <div className="App dark:bg-black bg-white ">
   <Header/>
-  <HomeFeed/>
+  <Outlet />
 {/*    
    {console.log(texts)}
    { <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(atob(texts.data[2].Body)) }} /> }
